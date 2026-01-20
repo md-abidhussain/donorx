@@ -53,7 +53,7 @@ DonorX provides:
 ## 🌐 Live Demo
 
 Frontend Live Link:  
-👉 *(GitHub Pages link will be added here)*
+👉 (https://md-abidhussain.github.io/donorx/)
 
 Backend API:  
 👉 *(Python backend URL to be added)*
