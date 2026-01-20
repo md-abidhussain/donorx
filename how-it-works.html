@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonorX - How It Works</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-droplet-fill text-danger"></i> Donor<span>X</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="post.html">Post Request</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="how-it-works.html">How It Works</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-dark text-white py-5 text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">How DonorX Works</h1>
+            <p class="lead text-muted-light">Connecting donors and patients in 3 simple steps.</p>
+        </div>
+    </header>
+
+    <!-- Steps Section -->
+    <div class="container py-5">
+        <div class="row g-4 text-center">
+
+            <!-- Step 1 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white shadow-sm rounded h-100">
+                    <div class="display-4 text-danger mb-3">
+                        <i class="bi bi-file-earmark-plus"></i>
+                    </div>
+                    <h3 class="fw-bold">1. Post a Request</h3>
+                    <p class="text-muted">
+                        Fill out the patient details, hospital location, and urgency level. Our system instantly
+                        publishes it to the live feed.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white shadow-sm rounded h-100">
+                    <div class="display-4 text-warning mb-3">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h3 class="fw-bold">2. Verification</h3>
+                    <p class="text-muted">
+                        To prevent spam, our algorithms (and future moderators) flag suspicious posts. Verified requests
+                        get a <i class="bi bi-patch-check-fill text-primary"></i> blue tick.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white shadow-sm rounded h-100">
+                    <div class="display-4 text-success mb-3">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h3 class="fw-bold">3. Connect & Save</h3>
+                    <p class="text-muted">
+                        Nearby donors see your request. They can contact you directly via the phone number provided to
+                        arrange the donation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne">
+                            Is this service free?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>Yes!</strong> DonorX is a non-profit initiative to help save lives during
+                            emergencies.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo">
+                            How do you prevent fake requests?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We used localized community reporting and algorithmic checks on phone numbers to flag
+                            high-volume spammers.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-white mt-auto">
+        <div class="container">
+            <p class="mb-0 fw-bold">DonorX</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

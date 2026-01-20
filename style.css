@@ -1,0 +1,316 @@
+/* 
+   DonorX - Modern Tech Design (Hackathon Winner Edition)
+   Theme: Vibrant Gradient & Glassmorphism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Vibrant Palette */
+    --primary-gradient: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+    /* Bright Coral */
+    --secondary-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    /* Fresh Mint */
+    --accent-color: #FF4B2B;
+
+    --bg-body: #F7F9FC;
+    --bg-card: #FFFFFF;
+
+    --text-dark: #1A1A2E;
+    --text-muted: #8E9aaf;
+
+    /* Shadows - Deep and Soft */
+    --shadow-sm: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===========================
+   Navbar - Glassmorphism 
+=========================== */
+.navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+/* ... existing code ... */
+
+/* Landing Page Cards */
+.landing-card {
+    height: 100%;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: var(--text-dark);
+}
+
+.landing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    color: var(--text-dark);
+}
+
+.landing-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark) !important;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+/* Active indicator dot */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+/* ===========================
+   Hero Section 
+=========================== */
+.hero-section {
+    position: relative;
+    padding: 80px 0 60px;
+    text-align: center;
+    background: #fff;
+    border-radius: 0 0 50px 50px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.hero-bg-blob {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 75, 43, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===========================
+   Modern Cards 
+=========================== */
+.card {
+    border: none;
+    border-radius: 20px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Blood Group Indicator - Floating style */
+.blood-group-circle {
+    width: 65px;
+    height: 65px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
+    margin-right: 15px;
+}
+
+/* Badges - Soft Pills */
+.badge {
+    padding: 0.6em 1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-soft-danger {
+    background-color: rgba(255, 75, 43, 0.1);
+    color: #FF4B2B;
+}
+
+.badge-soft-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #b38600;
+}
+
+.badge-soft-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+/* Buttons - Gradient Power */
+.btn-primary-custom {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    /* Full pill shape */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 75, 43, 0.4);
+    color: white;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #fcfdfe;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(255, 75, 43, 0.1);
+    background-color: #fff;
+}
+
+.form-label {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* Back Button - Minimal & Classic */
+.btn-back {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    color: var(--accent-color);
+    transform: translateX(-5px);
+    /* Small movement to indicate 'back' */
+}
+
+.btn-back i {
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    border-top: none;
+    /* Fancy top curve or gradient could go here */
+}
+
+/* Utilities */
+.text-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

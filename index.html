@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonorX - Modern Blood Connector</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showSection('landing-section')">
+                <i class="bi bi-droplet-fill text-danger me-2"></i>DonorX
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('landing-section')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('feed-section')">Live Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('how-it-works-section')">Process</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn btn-primary-custom" href="#" onclick="showSection('post-section')">
+                            Post Request
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+       
+        <section id="landing-section" class="fade-in">
+            <!-- Hero Banner -->
+            <div class="hero-section">
+                <div class="hero-bg-blob"></div>
+                <div class="container">
+                    <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2 mb-3 fw-bold">
+                        <i class="bi bi-heart-fill me-1"></i> SAVE A LIFE TODAY
+                    </span>
+                    <h1 class="hero-title">Be a <span class="text-gradient">Life Saver</span></h1>
+                    <p class="hero-subtitle">The fastest community-driven blood donor connector. <br>Real-time updates.
+                        No middlemen.</p>
+                </div>
+            </div>
+
+            <!-- Main Menu Grid -->
+            <div class="container pb-5">
+                <div class="row g-4 justify-content-center">
+                    <!-- Link to Feed -->
+                    <div class="col-md-4">
+                        <a onclick="showSection('feed-section')" class="card landing-card p-4 text-center shadow-lg">
+                            <div class="card-body">
+                                <i class="bi bi-activity landing-icon"></i>
+                                <h3 class="fw-bold">Live Feed</h3>
+                                <p class="text-muted small">View all urgent blood requests nearby.</p>
+                                <span class="text-danger fw-bold small">BROWSE NOW <i
+                                        class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Link to Post -->
+                    <div class="col-md-4">
+                        <a onclick="showSection('post-section')" class="card landing-card p-4 text-center shadow-lg">
+                            <div class="card-body">
+                                <i class="bi bi-plus-circle landing-icon"></i>
+                                <h3 class="fw-bold">Post Request</h3>
+                                <p class="text-muted small">Need blood? Broadcast to donors instantly.</p>
+                                <span class="text-danger fw-bold small">CREATE REQUEST <i
+                                        class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Link to Process -->
+                    <div class="col-md-4">
+                        <a onclick="showSection('how-it-works-section')"
+                            class="card landing-card p-4 text-center shadow-lg">
+                            <div class="card-body">
+                                <i class="bi bi-info-circle landing-icon"></i>
+                                <h3 class="fw-bold">How it Works</h3>
+                                <p class="text-muted small">Learn about verification and safety.</p>
+                                <span class="text-danger fw-bold small">LEARN MORE <i
+                                        class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="feed-section" class="d-none fade-in py-5">
+            <div class="container">
+                <!-- Back Arrow -->
+                <button class="btn-back" onclick="showSection('landing-section')">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-6">Urgent Requests</h2>
+                    <p class="text-muted">Real-time database of active blood requirements.</p>
+                </div>
+
+                <div id="request-feed" class="row g-4">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: POST REQUEST                      -->
+        <section id="post-section" class="d-none fade-in py-5">
+            <div class="container">
+                <!-- Back Arrow -->
+                <button class="btn-back" onclick="showSection('landing-section')">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body p-5">
+                                <div class="text-center mb-5">
+                                    <h2 class="fw-bold display-6">Create Request</h2>
+                                    <p class="text-muted">We'll alert nearby donors instantly.</p>
+                                </div>
+
+                                <form id="post-request-form">
+                                    <!-- Form content same as before -->
+                                    <div class="mb-4">
+                                        <label class="form-label">Patient Blood Group</label>
+                                        <select class="form-select" id="bloodGroup" required>
+                                            <option value="" selected disabled>Select Type...</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="O+">O+</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-12">
+                                            <label class="form-label">Hospital Location</label>
+                                            <input type="text" class="form-control" id="location"
+                                                placeholder="e.g. City General, Ward 4" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Urgency</label>
+                                            <select class="form-select" id="urgency" required>
+                                                <option value="High">High (Immediate)</option>
+                                                <option value="Medium">Medium (24h)</option>
+                                                <option value="Low">Low (Routine)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Contact</label>
+                                            <input type="text" class="form-control" id="contact"
+                                                placeholder="Phone Number" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary-custom btn-lg">
+                                            Publish Request
+                                        </button>
+                                        <button type="button" class="btn btn-light text-muted fw-bold rounded-pill py-3"
+                                            onclick="showSection('landing-section')">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <!-- SECTION 3: HOW IT WORKS                      -->
+        <section id="how-it-works-section" class="d-none fade-in py-5">
+            <div class="container">
+                <!-- Back Arrow -->
+                <button class="btn-back" onclick="showSection('landing-section')">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-5">Simple & Transparent</h2>
+                    <p class="text-muted fs-5">How the ecosystem works</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-4 hover-lift">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <i class="bi bi-pencil-square text-gradient display-1"></i>
+                                </div>
+                                <h3 class="fw-bold h4">1. Post Request</h3>
+                                <p class="text-muted">Enter patient details. Our system validates the phone number to
+                                    prevent spam.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-4 hover-lift">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <i class="bi bi-shield-check text-gradient display-1"></i>
+                                </div>
+                                <h3 class="fw-bold h4">2. Verification</h3>
+                                <p class="text-muted">Smart algorithms flag high-priority cases. Authentic requests get
+                                    a blue tick.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-4 hover-lift">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <i class="bi bi-heart-fill text-gradient display-1"></i>
+                                </div>
+                                <h3 class="fw-bold h4">3. Save a Life</h3>
+                                <p class="text-muted">Donors call you directly. No data hiding, no fees, just community
+                                    support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-5 text-center text-muted">
+        <div class="container">
+            <div class="mb-3">
+                <i class="bi bi-droplet-fill text-danger fs-4"></i>
+            </div>
+            <p class="mb-0 fw-bold text-dark">DonorX Hackathon Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
