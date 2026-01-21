@@ -44,19 +44,10 @@ DonorX provides:
 - Bootstrap 5
 - Vanilla JavaScript
 
-### Backend (Planned / Integrated)
-- Python
-- Flask (API-based backend)
-
----
-
 ## 🌐 Live Demo
 
 Frontend Live Link:  
 👉 (https://md-abidhussain.github.io/donorx/)
-
-Backend API:  
-👉 *(Python backend URL to be added)*
 
 ---
 
